@@ -92,6 +92,8 @@ nav {
   line-height: .82;
   letter-spacing: -.085em;
 }
+.hero-line { display: block; }
+.hero-line--accent { white-space: nowrap; }
 .hero h1 em { position: relative; font-weight: 400; }
 .hero h1 em::before {
   content: "";
@@ -291,7 +293,7 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding: 28px
   .nav-links.open { display: flex; }
   .hero { min-height: 92vh; padding-top: 120px; }
   .hero-top { display: block; }
-  .hero h1 { font-size: clamp(4rem, 21vw, 7rem); }
+  .hero h1 { max-width: 100%; font-size: min(18vw, 6rem); }
   .hero-note { width: auto; max-width: 330px; margin-top: 38px; }
   .hero-footer { margin-top: 64px; }
   section { padding: 90px 0; }
