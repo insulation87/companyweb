@@ -207,6 +207,11 @@
 
     document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
     document.getElementById('year').textContent = new Date().getFullYear();
+    if (new URLSearchParams(location.search).get('layout-check') === '1') {
+      const diagnosticScript = document.createElement('script');
+      diagnosticScript.src = 'layout-check.js';
+      document.body.appendChild(diagnosticScript);
+    }
   </script>
 </body>
 </html>
