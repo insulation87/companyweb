@@ -99,7 +99,7 @@ nav {
 }
 .hero-line { display: block; }
 .hero-line--accent { white-space: nowrap; }
-.hero h1 em { position: relative; font-weight: 400; }
+.hero h1 em { position: relative; margin-inline-end: .22em; font-weight: 400; }
 .hero h1 em::before {
   content: "";
   position: absolute;
