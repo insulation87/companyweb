@@ -312,8 +312,10 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding: 28px
   section { padding: 90px 0; }
   .section-heading { margin-bottom: 38px; }
   .project, .project:nth-child(3n) { width: 100%; max-width: 100%; min-width: 0; grid-column: 1 / -1; }
+  .projects { width: 100%; max-width: 100%; }
   .project-visual { width: 100%; max-width: 100%; }
-  .project-photo { object-fit: contain; object-position: center; background: #e7e3da; }
+  .project[data-category~="brand"] .project-visual { aspect-ratio: 3 / 4; }
+  .project .project-photo { object-fit: contain; object-position: center; background: #e7e3da; }
   .project-meta { width: 100%; min-width: 0; flex-wrap: wrap; }
   .projects { gap: 42px; }
   .about-grid { grid-template-columns: 1fr; gap: 28px; }
