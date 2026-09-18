@@ -75,6 +75,7 @@ h1 em::after { content: ""; position: absolute; z-index: -1; left: -.02em; right
 .story-copy p { margin: 0; color: var(--muted); }
 
 .gallery { display: grid; grid-template-columns: repeat(12, 1fr); gap: 22px; padding-bottom: 120px; }
+.gallery-hint { display: none; }
 .shot { grid-column: span 6; margin: 0 0 26px; }
 .shot.wide { grid-column: 1 / -1; }
 .shot.center { grid-column: 3 / span 8; }
@@ -114,8 +115,37 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding: 27px
   .intro { gap: 42px; margin-top: 56px; }
   .story { padding: 82px 0 55px; }
   .story-grid { gap: 35px; }
-  .gallery { gap: 14px; padding-bottom: 80px; }
-  .shot, .shot.wide, .shot.center { grid-column: 1 / -1; }
+  .gallery-hint {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 14px;
+    color: var(--muted);
+    font-size: .76rem;
+    font-weight: 700;
+    letter-spacing: .08em;
+  }
+  .gallery {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    scroll-padding-inline: 0;
+    overscroll-behavior-inline: contain;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    touch-action: pan-x pan-y;
+    padding-bottom: 80px;
+  }
+  .gallery::-webkit-scrollbar { display: none; }
+  .gallery:focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; }
+  .shot, .shot.wide, .shot.center {
+    flex: 0 0 min(84vw, 420px);
+    width: min(84vw, 420px);
+    margin-bottom: 0;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+  }
   .shot.fit .image-wrap { padding: 18px; }
   .downloads-head { display: block; }
   .downloads-head p { margin-top: 18px; }
