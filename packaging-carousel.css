@@ -1,0 +1,52 @@
+.packaging-carousel { min-width: 0; max-width: 100%; }
+.packaging-track {
+  display: flex;
+  width: 100%;
+  min-width: 0;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: thin;
+  background: #e7e3da;
+  outline-offset: -3px;
+}
+.packaging-slide {
+  flex: 0 0 100%;
+  min-width: 0;
+  margin: 0;
+  aspect-ratio: 3 / 4;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  border: 1px solid var(--line);
+}
+.packaging-slide img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.packaging-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  padding-top: 12px;
+}
+.packaging-controls p { margin: 0; font-size: .8rem; color: var(--muted); }
+.packaging-buttons { display: flex; align-items: center; gap: 10px; }
+.packaging-controls button {
+  min-width: 44px;
+  min-height: 44px;
+  border: 1px solid var(--line);
+  border-radius: 50%;
+  background: var(--paper);
+  cursor: pointer;
+}
+.packaging-controls button:disabled { opacity: .35; cursor: default; }
+.packaging-controls button:hover:not(:disabled) { background: var(--lime); }
+.packaging-controls [hidden] { display: none; }
+.packaging-track:focus-visible, .packaging-controls button:focus-visible {
+  outline: 2px solid var(--ink);
+}

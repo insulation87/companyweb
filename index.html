@@ -6,6 +6,8 @@
   <meta name="description" content="85的個人作品集。">
   <title>85 — 設計作品集</title>
   <link rel="stylesheet" href="styles.css?v=20260918-5">
+  <link rel="stylesheet" href="packaging-carousel.css?v=1">
+  <script src="packaging-carousel.js?v=1" defer></script>
 </head>
 <body>
   <div class="noise" aria-hidden="true"></div>
@@ -64,10 +66,48 @@
 
         <div class="projects">
           <article class="project reveal" data-category="brand">
-            <a href="Work/" aria-label="查看工具產品包裝設計專案">
-              <div class="project-visual"><img class="project-art project-photo" src="Work/418神田鳥尼龍鋼弗龍花剪小-web.png" alt="神田鳥花剪包裝設計" loading="lazy"></div>
+            <div class="packaging-carousel" role="region" aria-roledescription="輪播" aria-label="包裝設計圖片預覽">
+              <div class="packaging-track" id="packaging-preview" tabindex="0" aria-label="包裝作品圖片，可左右滑動或使用方向鍵切換">
+                <figure class="packaging-slide" role="group" aria-label="1 / 9：神田鳥花剪 418">
+                  <img src="Work/previews/shears-418.jpg" alt="神田鳥花剪 418" loading="lazy" decoding="async">
+                </figure>
+                <figure class="packaging-slide" role="group" aria-label="2 / 9：神田鳥花剪 428">
+                  <img src="Work/previews/shears-428.jpg" alt="神田鳥花剪 428" loading="lazy" decoding="async">
+                </figure>
+                <figure class="packaging-slide" role="group" aria-label="3 / 9：手鋸系列包裝">
+                  <img src="Work/previews/hand-saw.jpg" alt="手鋸系列包裝" loading="lazy" decoding="async">
+                </figure>
+                <figure class="packaging-slide" role="group" aria-label="4 / 9：替換刀片包裝">
+                  <img src="Work/previews/blade.jpg" alt="替換刀片包裝" loading="lazy" decoding="async">
+                </figure>
+                <figure class="packaging-slide" role="group" aria-label="5 / 9：剪定鋸片包裝">
+                  <img src="Work/previews/pruning-saw.jpg" alt="剪定鋸片包裝" loading="lazy" decoding="async">
+                </figure>
+                <figure class="packaging-slide" role="group" aria-label="6 / 9：勁合鋸包裝">
+                  <img src="Work/previews/saw.jpg" alt="勁合鋸包裝" loading="lazy" decoding="async">
+                </figure>
+                <figure class="packaging-slide" role="group" aria-label="7 / 9：大口徑電子卡式噴燈">
+                  <img src="Work/previews/large-torch.jpg" alt="大口徑電子卡式噴燈" loading="lazy" decoding="async">
+                </figure>
+                <figure class="packaging-slide" role="group" aria-label="8 / 9：電子卡式噴燈">
+                  <img src="Work/previews/torch.jpg" alt="電子卡式噴燈" loading="lazy" decoding="async">
+                </figure>
+                <figure class="packaging-slide" role="group" aria-label="9 / 9：防水凝膠包裝">
+                  <img src="Work/previews/gel.jpg" alt="防水凝膠包裝" loading="lazy" decoding="async">
+                </figure>
+              </div>
+              <div class="packaging-controls">
+                <p>左右滑動預覽</p>
+                <div class="packaging-buttons">
+                  <button type="button" data-previous aria-label="上一張包裝圖片" aria-controls="packaging-preview" hidden>←</button>
+                  <span data-counter aria-live="polite" aria-atomic="true">1 / 9</span>
+                  <button type="button" data-next aria-label="下一張包裝圖片" aria-controls="packaging-preview" hidden>→</button>
+                </div>
+              </div>
+            </div>
+            <a href="Work/" aria-label="查看工具產品包裝設計完整作品">
               <div class="project-meta">
-                <div><h3>包裝設計</h3><p>工具產品系列・視覺編排・產品識別</p></div>
+                <div><h3>包裝設計</h3><p>查看完整作品 ↗</p></div>
                 <span class="project-year">2026</span>
               </div>
             </a>
