@@ -84,7 +84,7 @@ nav {
   --hero-scale: 1;
   --hero-reveal: 0;
   --hero-note-y: 18px;
-  min-height: 150svh;
+  min-height: 125svh;
   padding: 0;
 }
 .hero > .container {
@@ -322,7 +322,7 @@ footer { display: flex; justify-content: space-between; gap: 20px; padding: 28px
     background: var(--paper);
   }
   .nav-links.open { display: flex; }
-  .hero { min-height: 155svh; padding: 0; }
+  .hero { min-height: 128svh; padding: 0; }
   .hero > .container {
     width: auto;
     height: 100svh;
