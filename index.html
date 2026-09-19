@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="85的個人作品集。">
   <title>85 — 設計作品集</title>
-  <link rel="stylesheet" href="styles.css?v=20260918-5">
+  <link rel="stylesheet" href="styles.css?v=20260919-1">
   <link rel="stylesheet" href="packaging-carousel.css?v=1">
   <script src="packaging-carousel.js?v=1" defer></script>
 </head>
@@ -246,6 +246,31 @@
     }, { threshold: .12 });
 
     document.querySelectorAll('.reveal').forEach(element => observer.observe(element));
+
+    const hero = document.querySelector('.hero');
+    const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+    let heroFrame;
+
+    const updateHero = () => {
+      const scrollRange = Math.max(hero.offsetHeight - window.innerHeight, 1);
+      const progress = Math.min(Math.max(-hero.getBoundingClientRect().top / scrollRange, 0), 1);
+      const reveal = Math.min(Math.max((progress - .42) / .58, 0), 1);
+
+      hero.style.setProperty('--hero-scale', reducedMotion.matches ? '.72' : String(1 - progress * .28));
+      hero.style.setProperty('--hero-reveal', reducedMotion.matches ? '1' : String(reveal));
+      hero.style.setProperty('--hero-note-y', reducedMotion.matches ? '0px' : `${(1 - reveal) * 18}px`);
+      heroFrame = null;
+    };
+
+    const requestHeroUpdate = () => {
+      if (!heroFrame) heroFrame = requestAnimationFrame(updateHero);
+    };
+
+    updateHero();
+    addEventListener('scroll', requestHeroUpdate, { passive: true });
+    addEventListener('resize', requestHeroUpdate);
+    reducedMotion.addEventListener?.('change', requestHeroUpdate);
+
     document.getElementById('year').textContent = new Date().getFullYear();
     if (new URLSearchParams(location.search).get('layout-check') === '1') {
       const diagnosticScript = document.createElement('script');
